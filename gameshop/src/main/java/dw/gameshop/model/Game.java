@@ -1,22 +1,24 @@
 package dw.gameshop.model;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.Table;
+@Entity
+@Table(name = "Game")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(length = 100)
+    @Column(name = "title", nullable = false, length = 100)
     private String title;
-    @Column(length = 100)
+    @Column(name = "genre", nullable = false, length = 100)
     private String genre;
+    @Column(name = "price")
     private int price;
-    @Column(length = 65535)
+    @Column(name = "image", length = 65535)
     private String image;
-    @Column(length = 65535)
+    @Column(name = "text", length = 65535)
     private String text;
 
     public Game() {
