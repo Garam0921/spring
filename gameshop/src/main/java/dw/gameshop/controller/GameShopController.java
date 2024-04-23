@@ -1,3 +1,4 @@
+
 package dw.gameshop.controller;
 
 import dw.gameshop.model.Game;
@@ -39,6 +40,17 @@ public class GameShopController {
     @PostMapping("/products/user")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         return new ResponseEntity<>(gameShopService.saveUser(user),
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/products/maxprice")
+    public ResponseEntity<Game> getGameWithMaxPrice() {
+        return new ResponseEntity<>(gameShopService.getGameWithMaxPrice(),
+                HttpStatus.OK);
+    }
+    @GetMapping("*/products/maxpricetop3")
+    public ResponseEntity<List<Game>> getGameWithMasPriceTop3() {
+        return new ResponseEntity<>(gameShopService.getGameWithMasPriceTop3(),
                 HttpStatus.OK);
     }
 }
