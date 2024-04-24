@@ -32,5 +32,5 @@ public class Customer {
     @Column(name="전화번호")
     private String phoneNumber;
     @Column(name = "마일리지")
-    private long mileage;
+    private int mileage;
 }

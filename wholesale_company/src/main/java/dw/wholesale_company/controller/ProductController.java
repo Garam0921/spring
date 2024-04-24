@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -18,6 +19,12 @@ public class ProductController {
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
         return new ResponseEntity< >(productService.getAllProducts(),
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/products/inventory/under/{num}")
+    public ResponseEntity<List<Product>> getProductByInventoryUnder(@PathVariable int num) {
+        return new ResponseEntity<>(productService.getProductByInventoryUnder(num),
                 HttpStatus.OK);
     }
 }
