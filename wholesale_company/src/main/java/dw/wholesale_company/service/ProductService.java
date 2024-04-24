@@ -23,4 +23,11 @@ public class ProductService {
         return productList.stream().filter(p -> p.getInventory() < num)
                 .collect(Collectors.toList());
     }
+
+    // 제품 중에서 제품명에 '주스'가 포함된 제품에 대한 모든 정보를 검색하시요
+    public List<Product> getProductsContainJuice() {
+        return getAllProducts().stream().filter(product -> product.getProductName()
+                .contains("주스"))
+                .collect(Collectors.toList());
+    }
 }
