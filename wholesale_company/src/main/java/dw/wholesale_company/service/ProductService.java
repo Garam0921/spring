@@ -32,9 +32,9 @@ public class ProductService {
     }
 
     // 제품명을 매개변수로 받아서 처리하는 것도 구현
-    public List<Product> getProductsContainProductName(String keyword) {
+    public List<Product> getProductsContainProductName(String productName) {
         return getAllProducts().stream()
-                .filter(product -> product.getProductName().contains(keyword))
+                .filter(product -> product.getProductName().contains(productName))
                 .collect(Collectors.toList());
     }
 

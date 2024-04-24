@@ -41,13 +41,12 @@ public class ProductController {
 
     // 제품명을 매개변수로 받아서 처리하는 것도 구현
     @GetMapping("/products/{productName}")
-    public ResponseEntity<List<Product>> getProductsContainProductName(@RequestParam String keyword) {
-        List<Product> products = productService.getProductsContainProductName(keyword);
+    public ResponseEntity<List<Product>> getProductsContainProductName(@PathVariable String productName) {
+        List<Product> products = productService.getProductsContainProductName(productName);
         if(products.isEmpty()) {
-            return new ResponseEntity<>(
-                    HttpStatus.NOT_FOUND);}
-        return new ResponseEntity<>(products,
-                HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
     @GetMapping("/products/search/limit/price")
@@ -62,9 +61,9 @@ public class ProductController {
         }
     }
 
-    @GetMapping("/products/search-by-price-range")
+    @GetMapping("/products/{lowLimit}/{highLimit}")
     public ResponseEntity<List<Product>> getProductsSearchByPriceRange(
-            @RequestParam long lowLimit, @RequestParam long highLimit) {
+            @PathVariable long lowLimit, @PathVariable long highLimit) {
         List<Product> products = productService.getProductsSearchByPriceRange(lowLimit, highLimit);
         if (products.isEmpty()) {
             return new ResponseEntity<>(products, HttpStatus.NOT_FOUND);
@@ -72,5 +71,4 @@ public class ProductController {
             return new ResponseEntity<>(products, HttpStatus.OK);
         }
     }
-
 }
