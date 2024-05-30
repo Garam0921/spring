@@ -17,7 +17,7 @@ public class Mileage {
     @Column(name = "등급명")
     private String id;
     @Column(name = "하한마일리지")
-    private long lowLimit;
+    private int lowLimit;
     @Column(name = "상한마일리지")
-    private long highLimit;
+    private int highLimit;
 }

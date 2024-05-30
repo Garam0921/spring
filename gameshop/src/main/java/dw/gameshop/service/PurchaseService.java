@@ -27,9 +27,12 @@ public class PurchaseService {
         return purchaseRepository.save(purchase);
     }
 
-    public List<Purchase> getAllPurchases() {
-        return purchaseRepository.findAll();
-    }
+    public List<Purchase> savePurchaseList(List<Purchase> purchaseList) {
+        List<purchase>.setPurchaseList = purchaseList.stream()
+                .map((purchase -> {
+                    purchase.setPurchaseTime(LocalDateTime.now());
+                    return purchaseRepository.save(purchase);
+                })
 
     public List<Purchase> getPurchaseListByUser(String userId) {
         // 유저아이디로 유저객체 찾기

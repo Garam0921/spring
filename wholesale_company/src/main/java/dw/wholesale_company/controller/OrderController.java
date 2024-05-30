@@ -1,5 +1,6 @@
 package dw.wholesale_company.controller;
 
+import dw.wholesale_company.model.Customer;
 import dw.wholesale_company.model.Order;
 import dw.wholesale_company.service.OrderService; // OrderService import 추가
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,12 @@ public class OrderController {
     @GetMapping("/orders/date/after/{date}")
     public ResponseEntity<List<Order>> getOrderByDateAfter(@PathVariable LocalDate date) {
         return new ResponseEntity<>(orderService.getOrderByDateAfter(date),
+                HttpStatus.OK);
+    }
+
+    @GetMapping("/orders/orderdate/{orderDate}")
+    public ResponseEntity<List<Customer>> getCustomerByOrderDate(@PathVariable LocalDate orderDate) {
+        return new ResponseEntity<>(orderService.getCustomerByOrderDate(orderDate),
                 HttpStatus.OK);
     }
 }

@@ -22,7 +22,7 @@ public class Product {
     @Column(name = "포장단위")
     private String pkgUnit;
     @Column(name = "단가")
-    private long unitPrice;
+    private int unitPrice;
     @Column(name = "재고")
-    private long inventory;
+    private int inventory;
 }

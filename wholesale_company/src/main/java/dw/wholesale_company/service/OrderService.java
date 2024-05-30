@@ -1,5 +1,6 @@
 package dw.wholesale_company.service;
 
+import dw.wholesale_company.model.Customer;
 import dw.wholesale_company.model.Order;
 import dw.wholesale_company.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,10 @@ public class OrderService {
                 .collect(Collectors.toList());
     }
 
+    //2020년 4월 9일에 주문한 고객의 모든 정보를 보이시오.
+    public List<Customer> getCustomerByOrderDate(LocalDate orderDate) {
+        List<Order> orders = orderRepository.findByOrderDate(orderDate);
+        return orders.stream().map(order -> order.getCustomerId())
+                .collect(Collectors.toList());
+    }
 }
