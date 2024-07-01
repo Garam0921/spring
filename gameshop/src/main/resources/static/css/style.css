@@ -1,0 +1,274 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+.title {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  font-size: 2rem;
+  color: rgb(46, 46, 46);
+}
+.menu {
+  width: 100%;
+  background-color: dodgerblue;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.menu > div {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 45px;
+}
+.menu > div:hover {
+  color: dodgerblue;
+  background-color: white;
+  cursor: pointer;
+}
+.content {
+  width: 100%;
+  padding: 20px;
+  background-color: khaki;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: lightblue;
+  padding: 20px;
+}
+.game {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  padding-bottom: 20px;
+}
+.game:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  transform: translate(0px, -5px);
+  cursor: pointer;
+}
+.image {
+  width: 100%;
+}
+.content p {
+  margin: 0 0 5px 10px;
+}
+.product {
+  width: 100%;
+  padding: 20px;
+  background-color: khaki;
+}
+.product p {
+  margin: 10px 20px;
+}
+.login {
+  height: 400px;
+  background-color: khaki;
+  display: flex;
+  align-items: center;
+}
+.login-box {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+.loginBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.logoutBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.signupEnd {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+.purchaseBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 50px;
+  display: inline-block;
+}
+.deleteBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 aute;
+  display: inline-block;
+}
+.pageSubmitBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  display: inline-block;
+}
+.loginBtn:hover,
+.logoutBtn:hover,
+.purchaseBtn:hover,
+.cartBtn:hover,
+.pageSubmitBtn:hover {
+  background-color: lightblue;
+  color: dodgerblue;
+}
+.user-box {
+  width: 450px;
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+.signup-box {
+  width: 450px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 20px 0;
+  margin-left: 30px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+  border-radius: 5px;
+}
+.low-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  align-items: center;
+}
+.cartBtn {
+  width: 100px;
+  height: 40px;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  line-height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.cart {
+  width: 100%;
+  background-color: khaki;
+  padding: 10px;
+}
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+}
+.cart-table td,
+.purchase-table td {
+  text-align: center;
+}
+thead {
+  background-color: #27ae60;
+  height: 50px;
+}
+tr:nth-child(even) {
+  background-color: #eaeaed;
+}
+.imgtd {
+  width: 200px;
+}
+.totalPrice {
+  display: inline-block;
+}
+.mypage {
+  width: 100%;
+  background-color: khaki;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
