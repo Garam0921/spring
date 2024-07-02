@@ -1,0 +1,540 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+}
+/* 전체 페이지 */
+body {
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+}
+.box1 {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  background-image: url("https://smsmusic.co.kr/default/img/sub_img2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.box2 {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+.box3 {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  margin-top: 50px;
+}
+.wbox {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* 상단 메뉴바 설정*/
+.mainMenu {
+  display: grid;
+  grid-template-columns: 1.5fr 5.5fr 3fr;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.mainMenu > div {
+  color: white;
+  margin-top: 30px;
+}
+
+.centerMenu {
+  padding: 40px;
+  font-weight: bold;
+}
+
+.rightMenu {
+  cursor: pointer;
+}
+
+.menuReviewBtn {
+  box-sizing: border-box;
+  border: 1px solid white;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  padding: 5px 20px 5px 20px;
+}
+
+.mainMenu > div > span:hover {
+  color: gray;
+}
+
+.title {
+  /* background-color: black; 배경색 제거 */
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  padding-top: 200px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 가독성을 위해 텍스트 그림자 추가 */
+}
+
+.subMenu {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.subMenu > div {
+  width: 250px;
+  height: 50px;
+  margin: 35px 20px 20px 0px;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 30px 30px 0px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subMenu > div:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.subMenu > div.active {
+  background-image: linear-gradient(
+    to right,
+    #d63ef4,
+    #619ede
+  ); /* 그라디언트 지정 */
+  color: white;
+}
+
+.logo {
+  width: 110px;
+  height: 40px;
+}
+
+.mypageIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.cartIcon {
+  width: 20px;
+  height: 25px;
+}
+
+/* 관리자페이지  */
+.adminDashboard {
+  font-size: 40px;
+  margin: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
+  font-weight: bold;
+}
+.adminUserInformation {
+  width: 100%;
+}
+.adminSubTitle {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 15px;
+}
+/* 테이블쪽 CSS */
+
+table,
+td {
+  border: 1px solid black;
+  text-align: center;
+  height: 100px;
+  font-size: 20px;
+  padding: 0 20px;
+}
+th {
+  border: 1px solid black;
+  text-align: center;
+  font-size: 24px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 20px 20px;
+}
+
+/* 유저별 수강중인 강의 */
+.userCourse {
+  width: 1000px;
+  margin: auto;
+  border: 1px solid black;
+  padding: 20px 20px;
+}
+
+.userCourseText {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.userCourseGrid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr 2fr;
+  padding: 20px 20px;
+  justify-items: center;
+  gap: 20px;
+}
+
+.courseTeacherImg {
+  width: 120px;
+  height: 145px;
+  border: 1px solid black;
+}
+
+.courseTeacherImg > img {
+  width: inherit;
+}
+
+.courseTitle,
+.courseTeacherName,
+.courseLecturePrice {
+  line-height: 130px;
+  font-size: 24px;
+}
+
+.userCourseModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center; /* 가로 중앙 정렬을 위해 */
+}
+
+.courseModal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 1100px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.courseModalClose {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.courseModalClose:hover,
+.courseModalClose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 강의별 유저 */
+.courseUserSubTitle {
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 180px;
+}
+.lectureCourseUserGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.celloLectureUser,
+.pianoLectureUser,
+.guitarLectureUser,
+.drumLectureUser {
+  width: 280px;
+  height: 300px;
+  border: 1px solid black;
+  margin: 20px 20px;
+  padding: 20px;
+}
+
+.courseUserGrid {
+  display: grid;
+  grid-template-columns: 9.8fr 0.2fr;
+  margin-bottom: 20px;
+}
+.lectureUserTitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.lectureUserTitleDown {
+  width: 100%;
+  height: 200px;
+  overflow: scroll;
+  overflow-x: hidden;
+  /* background: #E2E2E2; */
+}
+
+/*공지사항 글쓰기 */
+
+.noticeBox1 {
+  font-size: 40px;
+  margin: 30px 0px 30px 0px;
+  padding: 30px 0px 30px 0px;
+  font-weight: bold;
+}
+
+.noticeWriteBox1 {
+  width: 100%;
+  height: 100px;
+  font-size: 35px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+}
+
+.noticeWriteBox2 {
+  width: 100%;
+  height: 800px;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-top: 30px;
+  padding: 30px;
+}
+
+.noticeWriteBox3 {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #29323c,
+    #485563,
+    #2b5876,
+    #4e4376
+  );
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+.noticeWriteBox3:hover {
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+noticeWriteBox3:focus {
+  outline: none;
+}
+
+.rightMenuBx {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer {
+  margin-top: 0; /* box3와 footer 사이 간격 제거 */
+  text-align: center;
+  padding: 40px 0 20px 0; /* 기본 패딩 설정 */
+  background-color: #222222;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-circles {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* 텍스트와의 간격 조정 */
+}
+
+.footer-circle {
+  width: 40px; /* 크기를 더 크게 설정 */
+  height: 40px; /* 크기를 더 크게 설정 */
+  background-size: cover; /* 이미지가 요소 크기에 맞게 확대 */
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.footer-circle.git {
+  background-image: url("/img/깃아이콘.png"); /* 깃아이콘 이미지 경로 */
+}
+
+.footer-circle.figma {
+  background-image: url("/img/피그마아이콘.png"); /* 피그마아이콘 이미지 경로 */
+}
+
+.footer-info {
+  text-align: center;
+  padding: 20px 0; /* 높이를 늘리기 위해 패딩 추가 */
+}
+
+.footer-info p {
+  margin: 0;
+  font-size: 16px;
+  color: #808080;
+}
+
+/* alert 모달창 */
+.alertModal {
+  display: none; /* 기본적으로 숨김 처리 */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+}
+
+.alertModal-content {
+  border: 1px solid #0e0e0e;
+  background-color: #fff;
+  height: 220px;
+  margin: 15% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+.alertModalBtn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 10px 30px;
+  justify-items: center;
+}
+
+.alertModalBtnLogin {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#alertModalMessage {
+  font-family: "SUIT-Regular";
+  font-size: 24px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.alertClose {
+  font-family: "SUIT-Regular";
+  color: #aaa;
+  float: right;
+  font-size: 23px;
+  font-weight: 50px;
+  border-radius: 25px;
+  width: 80px;
+  height: 40px;
+  margin: 30px 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+.alertClose:hover {
+  font-family: "SUIT-Regular";
+  color: #0e0e0e;
+  text-decoration: none;
+  cursor: pointer;
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+#alertConfirmLogin,
+#alertConfirm {
+  font-family: "SUIT-Regular";
+  color: #aaa;
+  float: right;
+  font-size: 23px;
+  font-weight: 50px;
+  border-radius: 25px;
+  width: 80px;
+  height: 40px;
+  margin: 30px 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+}
+
+#alertConfirmLogin:hover,
+#alertConfirm:hover {
+  font-family: "SUIT-Regular";
+  color: #0e0e0e;
+  text-decoration: none;
+  cursor: pointer;
+  background-position: 100% 0;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.alertClose:focus,
+#alertConfirm:focus {
+  outline: none;
+}
+
+.adminUserAddress,
+.adminUserName,
+.adminUserGenre {
+  font-size: 17px;
+}
+
+.adminUserName,
+.adminUserGenre {
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
