@@ -3,6 +3,8 @@ package dw.majorflow.config;
 
 import dw.majorflow.exception.MyAccessDeniedHandler;
 import dw.majorflow.exception.MyAuthenticationEntryPoint;
+import dw.majorflow.jwt.JwtFilter;
+import dw.majorflow.jwt.TokenProvider;
 import dw.majorflow.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +25,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -31,6 +34,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfig{
     @Autowired
     private UserDetailService userDetailService;
+    @Autowired
+    private TokenProvider tokenProvider;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -52,8 +57,8 @@ public class SecurityConfig{
                                 new AntPathRequestMatcher("/admin/**"),
                                 new AntPathRequestMatcher("/edutech/**")
                         ).permitAll()
+                        .requestMatchers("/uploads/**").denyAll()
                         .anyRequest().authenticated())
-                .formLogin(form->form.loginPage("/login").defaultSuccessUrl("/articles"))
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .csrf(AbstractHttpConfigurer::disable)
@@ -62,14 +67,14 @@ public class SecurityConfig{
                         .accessDeniedHandler(new MyAccessDeniedHandler()))
                 .addFilterBefore(
                         new JwtFilter(tokenProvider),
-                        UsernameP)
+                        UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
-                       BCryptPasswordEncoder bCryptPasswordEncoder,
-                       UserDetailService userDetailService) throws Exception {
+                                                       BCryptPasswordEncoder bCryptPasswordEncoder,
+                                                       UserDetailService userDetailService) throws Exception {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailService);
         authProvider.setPasswordEncoder(bCryptPasswordEncoder);

@@ -1,11 +1,11 @@
 package dw.majorflow.controller;
 
-import dw.majorflow_jwt.dto.BaseResponse;
-import dw.majorflow_jwt.dto.LoginDto;
-import dw.majorflow_jwt.dto.TokenDto;
-import dw.majorflow_jwt.enumstatus.ResultCode;
-import dw.majorflow_jwt.jwt.JwtFilter;
-import dw.majorflow_jwt.jwt.TokenProvider;
+import dw.majorflow.dto.BaseResponse;
+import dw.majorflow.dto.LoginDto;
+import dw.majorflow.dto.TokenDto;
+import dw.majorflow.enumstatus.ResultCode;
+import dw.majorflow.jwt.JwtFilter;
+import dw.majorflow.jwt.TokenProvider;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

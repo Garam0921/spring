@@ -1,4 +1,8 @@
-const urlLogin = "http://localhost:8080/user/login";
+//const urlLogin = "/api/user/login";
+const urlAuthenticate = "/api/authenticate";
+const urlLogout = "/api/user/logout";
+const urlSignup = "/api/user/signup";
+const urlSession = "/api/user/current";
 let userId = "";
 let password = "";
 
@@ -37,7 +41,8 @@ document.querySelector(".sign-inBx").addEventListener("click", () => {
   };
 
   axios
-    .post(urlLogin, data, { withCredentials: true })
+ // .post(urlLogin, data, { withCredentials: true })
+    .post(urlAuthenticate, data, { withCredentials: true })
     .then((response) => {
       console.log("데이터: ", response);
       sessionCurrent();
